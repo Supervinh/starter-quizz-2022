@@ -33,4 +33,10 @@ export class QuizService {
     this.quizzes.push(quiz);
     this.quizzes$.next(this.quizzes);
   }
+
+  deleteQuiz(quiz: Quiz){
+    this.quizzes = this.quizzes.filter(q => q !== quiz);
+    this.quizzes$.next(this.quizzes)
+
+  }
 }
