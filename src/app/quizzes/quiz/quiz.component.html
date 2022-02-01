@@ -1,6 +1,7 @@
 <div class="card" *ngIf="quiz">
     <h2>
-        <i class="fab fa-leanpub"></i>
+        <i class="fas fa-dumbbell" *ngIf="quiz.theme === 'Sport'"></i>
+        <i class="fab fa-leanpub" *ngIf="quiz.theme === 'Actor'"></i>
         Nom: {{quiz.name}} <br>
         <span> Theme: {{quiz.theme}} </span> <br>
         <span> Nombre de questions: {{quiz.questions.length}} </span>
