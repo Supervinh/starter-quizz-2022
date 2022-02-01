@@ -47,6 +47,7 @@ export class QuizFormComponent implements OnInit {
 
     // Now, add your quiz in the list!
     quizToCreate.questions = [];
+    quizToCreate.creationDate = new Date();
     this.quizService.addQuiz(quizToCreate);
   }
 
