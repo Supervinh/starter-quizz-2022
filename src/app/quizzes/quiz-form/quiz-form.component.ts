@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
+import {stringify} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-quiz-form',
@@ -21,6 +22,7 @@ export class QuizFormComponent implements OnInit {
    */
   public quizForm: FormGroup;
   public THEME_LIST: string[] = ['Sport', 'Actor'];
+  private quizId: number = 2;
 
   constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
     // Form creation
@@ -48,6 +50,7 @@ export class QuizFormComponent implements OnInit {
     // Now, add your quiz in the list!
     quizToCreate.questions = [];
     quizToCreate.creationDate = new Date();
+    quizToCreate.id = String(this.quizId++);
     this.quizService.addQuiz(quizToCreate);
   }
 
